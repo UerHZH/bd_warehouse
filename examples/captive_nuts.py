@@ -1,5 +1,5 @@
 import cadquery as cq
-from cq_warehouse.fastener import HexNut, SquareNut
+from bq_warehouse.fastener import HexNut, SquareNut
 import cq_warehouse.extensions
 
 hex_nut = HexNut(size="M6-1", fastener_type="iso4033")

@@ -3560,7 +3560,8 @@ class ThreadedHole(BasePartObject):
         )
 
         self.thread = None if simple else thread
-        self.thread_locations = LocationList._get_context().locations
+        context = LocationList._get_context()
+        self.thread_locations = context.locations if context else [Location()]
 
 
 class InsertHole(BasePartObject):

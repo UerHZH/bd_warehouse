@@ -87,7 +87,7 @@ with BuildPart() as iso_internal_nut:
 nut = iso_internal.fuse(iso_internal_nut.part)
 elapsed_time = timeit.default_timer() - starttime
 print(f"Nut elapsed time: {elapsed_time:.3f}s")
-print(f"{nut.is_valid()=}")
+print(f"{nut.is_valid=}")
 
 # IsoThread external in the form of a screw
 starttime = timeit.default_timer()
@@ -117,7 +117,7 @@ acme_screw = acme + Cylinder(
 )
 elapsed_time = timeit.default_timer() - starttime
 print(f"Acme external elapsed time: {elapsed_time:.3f}s")
-print(f"{acme_screw.is_valid()=}")
+print(f"{acme_screw.is_valid=}")
 
 # Metric Trapezoidal Thread
 starttime = timeit.default_timer()
@@ -128,7 +128,7 @@ metric_screw = metric + Cylinder(
 
 elapsed_time = timeit.default_timer() - starttime
 print(f"Metric external elapsed time: {elapsed_time:.3f}s")
-print(f"{metric_screw.is_valid()=}")
+print(f"{metric_screw.is_valid=}")
 
 # Plastic Thread
 starttime = timeit.default_timer()
@@ -137,8 +137,8 @@ plastic_internal = PlasticBottleThread("M38SP444", external=False)
 
 elapsed_time = timeit.default_timer() - starttime
 print(f"Plastic elapsed time: {elapsed_time:.3f}s")
-print(f"{plastic_external.is_valid()=}")
-print(f"{plastic_internal.is_valid()=}")
+print(f"{plastic_external.is_valid=}")
+print(f"{plastic_internal.is_valid=}")
 print(f"Plastic external & internal elapsed time: {elapsed_time:.3f}s")
 
 
