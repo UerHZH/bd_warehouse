@@ -1555,7 +1555,7 @@ class Screw(ABC, BasePartObject):
         length: float,
         fastener_type: str,
         hand: Optional[Literal["right", "left"]] = "right",
-        simple: Optional[bool] = True,
+        simple: Optional[bool] = False,
         socket_clearance: Optional[float] = 6 * MM,
         rotation: RotationLike = (0, 0, 0),
         align: Union[None, Align, tuple[Align, Align, Align]] = None,
@@ -1800,7 +1800,7 @@ class ButtonHeadScrew(Screw):
     Args:
         size (str): size specification, e.g. "M6-1"
         length (float): screw length
-        fastener_type (Literal["iso7380_1"], optional): Defaults to "iso7380_1".
+        fastener_type (Literal["iso7380_1", 'gb70.2', 'din7380'], optional): Defaults to "iso7380_1".
             iso7380_1 - Hexagon socket button head screws
             hand (Literal["right","left"], optional): thread direction. Defaults to "right".
         simple (bool, optional): simplify by not creating thread. Defaults to True.
@@ -1815,7 +1815,7 @@ class ButtonHeadScrew(Screw):
         self,
         size: str,
         length: float,
-        fastener_type: Literal["iso7380_1"] = "iso7380_1",
+        fastener_type: Literal["iso7380_1", 'gb70.2', 'din7380'] = "iso7380_1",
         hand: Literal["right", "left"] = "right",
         simple: bool = True,
         rotation: RotationLike = (0, 0, 0),
@@ -1974,7 +1974,7 @@ class CheeseHeadScrew(Screw):
         self,
         size: str,
         length: float,
-        fastener_type: Literal["iso1207", "iso7048", "iso14580"] = "iso7048",
+        fastener_type: Literal["iso1207", "iso7048", "iso14580", 'din84', 'gb65'] = "iso7048",
         hand: Literal["right", "left"] = "right",
         simple: bool = True,
         rotation: RotationLike = (0, 0, 0),
@@ -2052,7 +2052,7 @@ class CounterSunkScrew(Screw):
         size: str,
         length: float,
         fastener_type: Literal[
-            "iso2009", "iso7046", "iso10642", "iso14581", "iso14582"
+            "iso2009", "iso7046", "iso10642", "iso14581", "iso14582", 'gb70.3', 'din7991'
         ] = "iso10642",
         hand: Literal["right", "left"] = "right",
         simple: bool = True,
@@ -2133,7 +2133,7 @@ class HexHeadScrew(Screw):
         self,
         size: str,
         length: float,
-        fastener_type: Literal["iso4014", "iso4017"] = "iso4014",
+        fastener_type: Literal["iso4014", "iso4017", "gb5787", 'gb5783', 'din931', 'din933', 'jisb1180'] = "iso4014",
         hand: Literal["right", "left"] = "right",
         simple: bool = True,
         rotation: RotationLike = (0, 0, 0),
@@ -2315,7 +2315,7 @@ class PanHeadScrew(Screw):
             Defaults to "iso14583".
             iso1580 - Slotted pan head screws
             iso14583 - Hexalobular socket pan head screws
-            asme_b_18.6.3 - Type 1 Cross Recessed Pan Head Machine Screws
+            asmeb18.6.3 - Type 1 Cross Recessed Pan Head Machine Screws
         hand (Literal["right","left"], optional): thread direction. Defaults to "right".
         simple (bool, optional): simplify by not creating thread. Defaults to True.
         rotation (RotationLike, optional): object rotation. Defaults to (0, 0, 0).
@@ -2330,7 +2330,7 @@ class PanHeadScrew(Screw):
         self,
         size: str,
         length: float,
-        fastener_type: Literal["iso1580", "iso14583", "asme_b_18.6.3"] = "iso14583",
+        fastener_type: Literal["iso1580", "iso14583", "asmeb18.6.3", 'gb818', 'din7989', 'jisb1111'] = "iso14583",
         hand: Literal["right", "left"] = "right",
         simple: bool = True,
         rotation: RotationLike = (0, 0, 0),
