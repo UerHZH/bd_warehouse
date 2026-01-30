@@ -4,7 +4,7 @@ from ocp_vscode import show, Camera
 # 1. Create a base plate
 plate = Box(30 * MM, 30 * MM, 10 * MM)
 # 2. Create the fastener reference
-fastener = SocketHeadCapScrew("M6-1", 20 * MM)
+fastener = SocketHeadCapScrew("M6-1", 20 * MM, fastener_type="iso4762")
 # 3. Create the hole cutter
 # Note: In a standalone context, this is just the "negative" shape.
 hole_cutter = ClearanceHole(fastener, fit="Normal", depth=20 * MM)
